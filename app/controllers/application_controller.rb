@@ -5,7 +5,8 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
-    enable :session, "wonderful_brewery"
+    enable :sessions
+    set :session_secret, "wonderful_brewery"
   end
 
   get "/" do
@@ -18,7 +19,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def current_user
-      Brewery.find_by(id: session[:user_id])
+      @current_user ||= Brewery.find_by(id: session[:user_id])
     end
 
   end
