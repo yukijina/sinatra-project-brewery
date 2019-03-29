@@ -1,2 +1,14 @@
-<h1>This is Show page</h1>
-<%= @current_user.name %>
+<h1>Welcome, <%= @current_user.name %>!</h1>
+
+<p>Your member ID number: <%= @current_user.id %></p>
+<p>Email: <%= @current_user.email %></p>
+<p>City: <%= @current_user.city %></p>
+
+
+<h2>Brewery Club Member List:</h2>
+<% @breweries.each.with_index(1) do |brewery, index| %>
+  <h3><%= index %>. <%= brewery.name %></h3>
+  <p><%= brewery.city %></p>
+<% end %>
+
+<button type="button" name="button"><a href="/brands">Check Beer Brand List</a></button>
