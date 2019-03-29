@@ -1,15 +1,18 @@
 class BreweriesController < ApplicationController
 
   get "/signup" do
-    erb :"/breweries/new"
+    if logged_in?
+      redirect "/login"
+    else
+      erb :"/breweries/new"
+    end
   end
 
   post "/signup" do
-    binding.pry
     brewery = Brewery.new(params)
     if brewery.save
       session[:user_id] = brewery.id
-      redirect "/breweries"
+      redirect "/breweries/#{brewery.id}"
     else
       redirect "/signup"
     end
@@ -34,15 +37,11 @@ class BreweriesController < ApplicationController
     if logged_in?
       brewery = Brewery.find_by_id(params[:id])
       current_user
+      @breweries = Brewery.all
       erb :"/breweries/show"
     else
+      redirect "/login"
     end
   end
-
-  get "/breweries" do
-    erb :"/breweries/breweries"
-  end
-
-
 
 end
