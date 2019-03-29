@@ -40,11 +40,17 @@ class BrandsController < ApplicationController
     redirect "/brands/#{brand.id}"
   end
 
-
-
   #DELETE
-  delete "brands/:id" do
+  delete "/brands/:id" do
+    brand = Brand.find_by_id(params[:id])
 
+    if brand && brand.brewery_id == session.user_id
+      brand.delete
+      redirect "/brands"
+    else
+      redirect "/login"
+    end
   end
+
 
 end
