@@ -24,10 +24,18 @@ class BreweriesController < ApplicationController
 
   post "/login" do
     brewery = Brewery.find_by(email: params[:email])
-
     if brewery && brewery.authenticate(params[:password])
       session[:user_id] = brewery.id
       redirect "/breweries/#{brewery.id}"
+    else
+      redirect "/login"
+    end
+  end
+
+  get "/logout" do
+    if logged_in?
+      session.clear
+      redirect "/login"
     else
       redirect "/login"
     end
