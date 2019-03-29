@@ -1,0 +1,14 @@
+<h1>This is All Brands page</h1>
+
+<h2><%= @current_user.name %></h2>
+<h3>City: </h3>
+<p><% @current_user.city %></p>
+
+<h3>Brand: </h3>
+<% @brands.all.each do |brand| %>
+  <p><%= brand.brewery.name %></p>
+  <p><%= brand.brewery.city %></p>
+  <p><%= brand.name %></p>
+  <p><%= brand.style %></p>
+  <p><%= brand.style %></p>
+<% end %>
