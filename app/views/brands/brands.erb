@@ -2,13 +2,12 @@
 
 <h2><%= @current_user.name %></h2>
 <h3>City: </h3>
-<p><% @current_user.city %></p>
+<p><%= @current_user.city %></p>
 
 <h3>Brand: </h3>
 <% @brands.all.each do |brand| %>
-  <p><%= brand.brewery.name %></p>
-  <p><%= brand.brewery.city %></p>
+  <h4>Brewery: <%= brand.brewery.name %>, <%= brand.brewery.city %></h4>
   <p><%= brand.name %></p>
   <p><%= brand.style %></p>
-  <p><%= brand.style %></p>
+  <p><%= brand.ABV %></p>
 <% end %>
