@@ -22,6 +22,10 @@ class ApplicationController < Sinatra::Base
       @current_user ||= Brewery.find_by(id: session[:user_id])
     end
 
+    def redirect_to_logged_in
+      redirect "/login" unless logged_in?
+    end
+
   end
 
 end
