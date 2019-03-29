@@ -1,11 +1,10 @@
-<h1>Yay! New brand was created.</h1>
-<h2><%= @brand.brewery.name %></h2>
+<h1>What's on tap at <%= @brand.brewery.name %></h1>
 
 <h3><%= @brand.name %></h3>
 <p>Style: <%= @brand.style %></p>
 <p>ABV: <%= @brand.ABV %></p>
 
-<a href="#">Edit</a>
+<a href="/brands/<%= @brand.id %>/edit">Edit</a>
 <a href="#">Delete</a>
 <a href="#">Create</a>
 <a href="#">See all the Brands</a>
