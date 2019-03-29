@@ -5,6 +5,12 @@
 <p>ABV: <%= @brand.ABV %></p>
 
 <a href="/brands/<%= @brand.id %>/edit">Edit</a>
-<a href="#">Delete</a>
+
+<form action="/brands/<%= @brand.id %>" method="post">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>
+
+<!-- <a href="#">Delete</a>
 <a href="#">Create</a>
-<a href="#">See all the Brands</a>
+<a href="#">See all the Brands</a> -->
