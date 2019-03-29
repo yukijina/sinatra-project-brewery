@@ -28,11 +28,16 @@ class BrandsController < ApplicationController
 
   #EDIT
   get "/brands/:id/edit" do
-    
+    redirect_to_logged_in
+    @brand = Brand.find_by_id(params[:id])
+    erb :"/brands/edit"
   end
 
-  patch "/brands/:id" do
+  patch "/brands/:id/edit" do
+    brand = Brand.find_by_id(params[:id])
+    brand.update(name: params[:name], style: params[:style], ABV:params[:ABV])
 
+    redirect "/brands/#{brand.id}"
   end
 
 
