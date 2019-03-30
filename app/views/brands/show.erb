@@ -4,13 +4,17 @@
 <p>Style: <%= @brand.style %></p>
 <p>ABV: <%= @brand.ABV %></p>
 
-<a href="/brands/<%= @brand.id %>/edit">Edit</a>
+<% if @brand.brewery_id == @current_user.id %>
+  <a href="/brands/<%= @brand.id %>/edit">Edit</a>
+  <a href="/brands/new">Create a new brand</a>
 
-<form action="/brands/<%= @brand.id %>" method="post">
-  <input type="hidden" id="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete">
-</form>
+  <form action="/brands/<%= @brand.id %>" method="post">
+    <input type="hidden" id="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
 
-<!-- <a href="#">Delete</a>
-<a href="#">Create</a>
-<a href="#">See all the Brands</a> -->
+<% end %>
+
+<a href="/breweries/<%= @brand.brewery.id %>">More about this Brewery</a>
+<a href="/brands">All brands</a>
+<a href="/breweries">All breweries</a>
