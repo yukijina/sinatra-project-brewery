@@ -1,13 +1,14 @@
-<h1>This is All Brands page</h1>
-
-<h2><%= @current_user.name %></h2>
-<h3>City: </h3>
-<p><%= @current_user.city %></p>
+<h1>All Brands</h1>
+<h2>Hey, <%= @current_user.name %>!</h2>
+<p>Here is the list of all brands of Brewery Club Members! Click the button to see more details.</p>
 
 <h3>Brand: </h3>
-<% @brands.all.each do |brand| %>
-  <h4>Brewery: <%= brand.brewery.name %>, <%= brand.brewery.city %></h4>
-  <p><%= brand.name %></p>
-  <p><%= brand.style %></p>
-  <p><%= brand.ABV %></p>
+<% @brands.all.select do |brand| %>
+    <h4><%= brand.name %></h4>
+    <h5>Style: <%= brand.style %></h5>
+    <a href="/brands/<%= brand.id %>">More</a>
+
+    <% if brand.brewery_id == @current_user.id %>
+    <a href="/brands/<%= brand.id %>/edit">Edit</a>
+    <% end %>
 <% end %>
