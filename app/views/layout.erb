@@ -15,9 +15,14 @@
     <div class="wrapper">
       <nav>
         <ul>
-          <li><a href="/signup">SIGN UP</a></li>
-          <li><a href="/login">LOG IN</a></li>
+          <% if !logged_in? %>
+            <li><a href="/signup">SIGN UP</a></li>
+            <li><a href="/login">LOG IN</a></li>
+          <% else  %>
           <li><a href="/logout">LOG OUT</a></li>
+          <li><a href="/breweries">BREWERIES</a></li>
+          <li><a href="/brands">BRANDS</a></li>
+          <% end  %>
         </ul>
       </nav>
 
