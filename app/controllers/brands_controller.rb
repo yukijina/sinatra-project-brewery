@@ -11,7 +11,7 @@ class BrandsController < ApplicationController
   get "/brands/new" do
     redirect_to_logged_in
     current_user
-    erb :"/brands/new"
+      erb :"/brands/new"
   end
 
   post "/brands" do
@@ -22,6 +22,7 @@ class BrandsController < ApplicationController
   #SHOW
   get "/brands/:id" do
     redirect_to_logged_in
+    current_user
     @brand = Brand.find_by_id(params[:id])
     erb :"/brands/show"
   end
@@ -35,16 +36,20 @@ class BrandsController < ApplicationController
 
   patch "/brands/:id/edit" do
     brand = Brand.find_by_id(params[:id])
-    brand.update(name: params[:name], style: params[:style], ABV:params[:ABV])
-
-    redirect "/brands/#{brand.id}"
+    if current_user.id == brand.brewery.id
+      brand.update(name: params[:name], style: params[:style], ABV:params[:ABV])
+      redirect "/brands/#{brand.id}"
+    else
+      redirect "/brands"
+    end
   end
 
   #DELETE
   delete "/brands/:id" do
     brand = Brand.find_by_id(params[:id])
 
-    if brand && brand.brewery_id == session.user_id
+    #getting error
+     if brand && brand.brewery.id == session[:brewery_id]
       brand.delete
       redirect "/brands"
     else
