@@ -15,11 +15,11 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:user_id]
+      !!session[:brewery_id]
     end
 
     def current_user
-      @current_user ||= Brewery.find_by(id: session[:user_id])
+      @current_user ||= Brewery.find_by(id: session[:brewery_id])
     end
 
     def redirect_to_logged_in
