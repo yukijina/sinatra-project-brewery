@@ -1,14 +1,23 @@
-<h1>Welcome, <%= @current_user.name %>!</h1>
-
-<p>Your member ID number: <%= @current_user.id %></p>
-<p>Email: <%= @current_user.email %></p>
-<p>City: <%= @current_user.city %></p>
+<h1>This is Brewery show page. <%= @brewery.name %>!</h1>
 
 
-<h2>Brewery Club Member List:</h2>
-<% @breweries.each.with_index(1) do |brewery, index| %>
-  <h3><%= index %>. <%= brewery.name %></h3>
-  <p><%= brewery.city %></p>
+<% if @current_user == @brewery %>
+  <p>your member ID: <%= @brewery.id %></p>
+  <p>your email: <%= @brewery.email %></p>
 <% end %>
 
-<button type="button" name="button"><a href="/brands">Check Beer Brand List</a></button>
+<p>City: <%= @brewery.city %></p>
+
+<% if @brewery.brands.empty? %>
+  <p><%= @brewery.name  %> does not have any brands.</p>
+  <% else @brewery.brands.each do |brand| %>
+    <ul>
+      <li>
+          <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
+      </li>
+    </ul>
+  <% end  %>
+<% end  %>
+
+
+<a href="/breweries">All Breweries</a>
