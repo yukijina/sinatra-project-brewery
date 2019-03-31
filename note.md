@@ -2,21 +2,21 @@
 
 ## We have two class (class name is singular)
 - class Brewery      has_many  has_secure_password
-- class BeerBrand    belongs_to
+- class Brand        belongs_to
 
 ### Brewery has many beer brand
 - Brewery table
 - :name "Lagnitas"   #string
-- :email  "lag@gmail"   #string - unique log in attribute
+- :email  "lag@example.com"  #string - unique log in attribute
 - :password "****"      #password_digest
 - :city "Lagnitas, CA"  #string
 
 
 ### Brand belongs to brewery
 - Brand table
-- :brand_name "IPL"   #string
+- :name   "IPA"   #string
 - :style  "Indian Pale Ale"     #string
-- :ABV   "7.2%"    #string
+- :abv    "7.2%"    #string
 - :brewery_id       #integer
 
 ## Brewery
@@ -68,24 +68,24 @@
    - render signup form
    - form has column of name, email, password, city and submit button
 
- - post '/signup'   redirect '/breweries/show'
+ - post '/signup'   redirect '/breweries/:id'
 
 - Login
  - get '/login'     erb:login    
   - render login form
   - login form has email and password
- - post '/login'    redirect '/breweries/show'
+ - post '/login'    redirect '/breweries/:id'
 
 - Logout
  - get 'logout'     redirect '/'  
 
 - Brewery SHOW
- - get '/breweries/show'  erb: '/breweries/show'  #=>individual brewery
+ - get '/breweries/:id'  erb: '/breweries/show'  #=>individual brewery
 
 ### Route for BrandsController
-- Beer Brand Index
- - get '/brands'     erb :'/brands/index'
-   - render all Breweries and brands information
+- Brand Index
+ - get '/brands'     erb :'/brands/brands'(brand index)
+   - render all brands information
 
 - New: create a new brand
  - get '/brands/new'  erb :'/brands/new'
@@ -93,7 +93,7 @@
  - post '/brands'     redirect '/brands/:id'
 
 - SHOW: Individual brand
- - get '/brands/:id'  erb :'/brands_show'
+ - get '/brands/:id'  erb :'/brands/show'
 
 - Edit: Edit brand content
  - get '/brands/:id/edit'   erb :"/brands/edit"
@@ -101,18 +101,19 @@
  - patch 'brands/:id/edit'  redirect "/brands/:id"
 
 - DELETE: delete brand content -include form in show page
- - get '/brands/:id/delete'
- - delete '/brands/index'
+ - get '/brands/:id'
+ - delete '/brands/:id'  redirect :"/breweries/:id"
 
 ## View - erb (directly:plural)
 - index
 - layout
 
 - breweries/new  (signup)
-- breweries/show
+- breweries/show (individual brewery info)
 - breweries/login
+- breweries/breweries (all brewery info / brewery index)
 
-- brands/index  (all brands info)
+- brands/brands  (all brands info / brands index)
 - brands/new
-- brands/show  (individual brand info)
+- brands/show  (individual brand info + delete form)
 - brands/edit
