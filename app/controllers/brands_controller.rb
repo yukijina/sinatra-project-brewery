@@ -46,12 +46,11 @@ class BrandsController < ApplicationController
 
   #DELETE
   delete "/brands/:id" do
-    brand = Brand.find_by_id(params[:id])
+    @brand = Brand.find_by_id(params[:id])
 
-    #getting error
-     if brand && brand.brewery.id == session[:brewery_id]
-      brand.delete
-      redirect "/brands"
+     if @brand && @brand.brewery.id == session[:brewery_id]
+      @brand.delete
+      redirect "/breweries/<%= @brand.brewery.id %>"
     else
       redirect "/login"
     end
