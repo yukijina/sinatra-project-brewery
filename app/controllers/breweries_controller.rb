@@ -10,7 +10,10 @@ class BreweriesController < ApplicationController
 
   post "/signup" do
     @brewery = Brewery.new(params)
-    if @brewery.save
+    #Can't sign up if there is the same email in the db
+    if !Brewery.all.where({email:params[:email]}).empty?
+       redirect "/signup"
+    elsif @brewery.save
       session[:brewery_id] = @brewery.id
       redirect "/breweries/#{@brewery.id}"
     else
