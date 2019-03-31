@@ -11,19 +11,16 @@
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/stylesheets/main.css" /> -->
-    <link rel="stylesheet" href="/stylesheets/corneal.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- <link rel="stylesheet" href="/stylesheets/style.css" /> -->
+    <link rel="stylesheet" href="/stylesheets/custom.css" />
 
   </head>
 
   <body>
     <div class="wrapper">
-      <nav>
+      <nav class="mb">
         <ul>
-          <% if !logged_in? %>
-            <li><a href="/signup">SIGN UP</a></li>
-            <li><a href="/login">LOG IN</a></li>
-          <% else  %>
+          <% if logged_in?  %>
           <li><a href="/logout">LOG OUT</a></li>
           <li><a href="/breweries">BREWERIES</a></li>
           <li><a href="/brands">BRANDS</a></li>

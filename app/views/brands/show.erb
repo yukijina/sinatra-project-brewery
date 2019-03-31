@@ -9,19 +9,19 @@
 
   <form action="/brands/<%= @brand.id %>" method="post" class="form-inline">
     <input type="hidden" id="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete" class="btn-sm">
+    <input type="submit" value="Delete" class="btn-sm mb">
   </form>
 
 <% end %>
 
 <div>
-  <a href="/breweries/<%= @brand.brewery.id %>">More about this Brewery</a>
+  <a href="/breweries/<%= @brand.brewery.id %>" class="link">More about this Brewery</a>
 </div>
 
 <div>
-  <a href="/brands">All brands</a>
+  <a href="/brands" class="link">All brands</a>
 </div>
 
 <div>
-  <a href="/breweries">All breweries</a>
+  <a href="/breweries" class="link">All breweries</a>
 </div>
