@@ -11,11 +11,12 @@ class BrandsController < ApplicationController
   get "/brands/new" do
     redirect_to_logged_in
     current_user
-      erb :"/brands/new"
+    erb :"/brands/new"
   end
 
   post "/brands" do
     brand = current_user.brands.create(params)
+    binding.pry
     redirect "/brands/#{brand.id}"
   end
 
@@ -46,11 +47,10 @@ class BrandsController < ApplicationController
 
   #DELETE
   delete "/brands/:id" do
-    @brand = Brand.find_by_id(params[:id])
-
-     if @brand && @brand.brewery.id == session[:brewery_id]
-      @brand.delete
-      redirect "/breweries/<%= @brand.brewery.id %>"
+    brand = Brand.find_by_id(params[:id])
+     if brand && brand.brewery.id == session[:brewery_id]
+      brand.delete
+      redirect "/breweries/#{current_user[:id]} >"
     else
       redirect "/login"
     end
