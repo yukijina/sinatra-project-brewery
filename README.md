@@ -28,6 +28,6 @@ Once that is complete, you should only need to run `shotgun` in the applicateion
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/yukijina/sinatra-project-brewery. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-#license
+## License
 
 This project is licensed under the MIT License
