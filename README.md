@@ -8,7 +8,7 @@ Brewery lists with its beer brand information.
 To use this app, just clone, run `rake db:migrate` and then run `shotgun`.
 Everything should be set up.
 
-To get started, you shoud clone the repository from GitHub. In your terminal:
+To get started, you should clone the repository from GitHub. In your terminal:
 
 `git clone git@github.com:yukijina/sinatra-project-brewery.git`
 
@@ -20,7 +20,7 @@ Make sure that you have the latest bundler version installed.
 
 `bundle install`
 
-Once that is complete, you should only need to run `shotgun` in the applicateion roote and visit: `localhost:9393`
+Once that is complete, you should only need to run `shotgun` in the application root and visit: `localhost:9393`
 
 
 
