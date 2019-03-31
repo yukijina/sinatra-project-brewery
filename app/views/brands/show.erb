@@ -1,20 +1,27 @@
-<h1>What's on tap at <%= @brand.brewery.name %></h1>
-
-<h3><%= @brand.name %></h3>
+<h1><%= @brand.name %></h1>
 <p>Style: <%= @brand.style %></p>
 <p>ABV: <%= @brand.ABV %></p>
+<p>at <%= @brand.brewery.name %></p>
 
 <% if @brand.brewery_id == @current_user.id %>
-  <a href="/brands/<%= @brand.id %>/edit">Edit</a>
-  <a href="/brands/new">Create a new brand</a>
+  <a href="/brands/<%= @brand.id %>/edit" class="btn-sm">Edit</a>
+  <a href="/brands/new" class="btn-sm">Register a new brand</a>
 
-  <form action="/brands/<%= @brand.id %>" method="post">
+  <form action="/brands/<%= @brand.id %>" method="post" class="form-inline">
     <input type="hidden" id="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete" class="btn-sm">
   </form>
 
 <% end %>
 
-<a href="/breweries/<%= @brand.brewery.id %>">More about this Brewery</a>
-<a href="/brands">All brands</a>
-<a href="/breweries">All breweries</a>
+<div>
+  <a href="/breweries/<%= @brand.brewery.id %>">More about this Brewery</a>
+</div>
+
+<div>
+  <a href="/brands">All brands</a>
+</div>
+
+<div>
+  <a href="/breweries">All breweries</a>
+</div>

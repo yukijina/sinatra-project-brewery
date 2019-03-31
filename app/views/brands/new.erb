@@ -1,15 +1,19 @@
-<h1>Create a Brand</h1>
+<h1>Register Your Brand</h1>
 
 <form action="/brands" method="post">
-  
-  <label for="name">Brand Name: </label>
-  <input type="text" name="name">
-  <br>
-  <label for="style">Style: </label>
-  <input type="text" name="style">
-  <br>
-  <label for="ABV">Alcohole By Volume (ABV): </label>
-  <input type="text" name="ABV">
-  <br>
-  <input type="submit" value="Create">
+  <div class="input-col">
+    <label for="name">Brand Name: </label>
+    <input type="text" name="name">
+  </div>
+
+  <div class="input-col">
+    <label for="style">Style: </label>
+    <input type="text" name="style">
+  </div>
+
+  <div class="input-col">
+    <label for="ABV">Alcohole By Volume (ABV): </label>
+    <input type="text" name="ABV">
+  </div>
+  <input type="submit" value="Register" class="btn-sm">
 </form>

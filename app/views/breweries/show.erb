@@ -1,23 +1,26 @@
-<h1>This is Brewery show page. <%= @brewery.name %>!</h1>
-
+<h1><%= @brewery.name %></h1>
 
 <% if @current_user == @brewery %>
   <p>your member ID: <%= @brewery.id %></p>
   <p>your email: <%= @brewery.email %></p>
 <% end %>
-
 <p>City: <%= @brewery.city %></p>
-
+<h3>What's on tap at <%= @brewery.name %></h3>
 <% if @brewery.brands.empty? %>
   <p><%= @brewery.name  %> does not have any brands.</p>
   <% else @brewery.brands.each do |brand| %>
     <ul>
       <li>
-          <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
+          <a href="/brands/<%= brand.id %>" class="link"><%= brand.name %></a>
       </li>
     </ul>
   <% end  %>
 <% end  %>
 
+<% if @current_user == @brewery %>
+  <a href="/brands/new" class="btn-sm">Register your brand</a>
+<% end  %>
 
-<a href="/breweries">All Breweries</a>
+<div>
+  <a href="/breweries">All Breweries</a>
+</div>

@@ -1,17 +1,22 @@
 <% if logged_in? %>
-<p>You already have an account. Please log in!</p>
+  <p>You are already logged in.</p>
+
+<% else %>
+  <h3>Log in</h3>
+
+  <form action="/login" method="post">
+    <div class="input-col">
+      <label for="email">Email: </label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="input-col">
+      <label for="password">Password: </label>
+      <input type="password" name="password" required>
+    </div>
+
+    <input type="submit" value="Log In" class="btn-sm">
+
+  </form>
+
 <% end %>
-
-<h1>Login Form!</h1>
-
-<form action="/login" method="post">
-  <label for="email">Email: </label>
-  <input type="email" name="email">
-  <br>
-  <label for="password">Password: </label>
-  <input type="password" name="password">
-  <br>
-
-  <input type="submit" value="Log In">
-
-</form>

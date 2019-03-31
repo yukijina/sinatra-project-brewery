@@ -1,14 +1,17 @@
 <h1>All Brands</h1>
 <h2>Hey, <%= @current_user.name %>!</h2>
-<p>Here is the list of all brands of Brewery Club Members! Click the button to see more details.</p>
+<p>Here is the list of all brands of Brewery Club! Click the button to see more details.</p>
 
 <h3>Brand: </h3>
 <% @brands.all.select do |brand| %>
+  <div class="brand-col">
     <h4><%= brand.name %></h4>
     <h5>Style: <%= brand.style %></h5>
-    <a href="/brands/<%= brand.id %>">More</a>
+
+    <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
 
     <% if brand.brewery_id == @current_user.id %>
-    <a href="/brands/<%= brand.id %>/edit">Edit</a>
+    <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
     <% end %>
+  </div>
 <% end %>

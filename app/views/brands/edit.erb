@@ -1,18 +1,20 @@
-<h1>Edit a Brand</h1>
+<h1>Edit Brand</h1>
 
 <form action="/brands/<%= @brand.id %>/edit" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
 
-  <label for="name">Brand Name: </label>
-  <input type="text" name="name" value="<%= @brand.name %>" required>
-  <br>
-  <label for="style">Style: </label>
-  <input type="text" name="style" value="<%= @brand.style %>" required>
-  <br>
-  <br>
-  <label for="ABV">Alcohole By Volume (ABV): </label>
-  <input type="text" name="ABV" value="<%= @brand.ABV %>" required>
-  <br>
-  <br>
-  <input type="submit" value="Edit">
+  <div class="input-col">
+    <label for="name">Brand Name: </label>
+    <input type="text" name="name" value="<%= @brand.name %>" required>
+  </div>
+  <div class="input-col">
+    <label for="style">Style: </label>
+    <input type="text" name="style" value="<%= @brand.style %>" required>
+  </div>
+  <div class="input-col">
+    <label for="ABV">Alcohole By Volume (ABV): </label>
+    <input type="text" name="ABV" value="<%= @brand.ABV %>" required>
+  </div>
+
+  <input type="submit" value="Edit" class="btn-sm">
 </form>
