@@ -1,0 +1,97 @@
+body {
+  background-image: url(/images/background.jpg);
+  color: #333;
+  font-family: 'Lato', sans-serif;
+  line-height: 18px;
+}
+
+
+.btn {
+  background-color: rgb(208, 131, 28);
+  color: #fefefe;
+  text-transform: uppercase;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+}
+
+.btn:link,
+.btn:visited,
+.btn-sm:link,
+.btn-sm:visited {
+  text-decoration: none;
+  transition: all 2s;
+  /* transition property has to be in initial state
+  this property is for short-hand of ANIMATION property  */
+}
+
+.btn:hover {
+  color: rgb(156, 68, 5);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.btn-sm {
+  background-color: rgb(208, 131, 28);
+  color: #fefefe;
+  padding: 7px 25px;
+  display: inline-block;
+  border-radius: 50px;
+  border: none;
+}
+
+.btn-sm:hover {
+  color: rgb(156, 68, 5);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 15px rgba(0,0,0,.2);
+}
+
+.btn-sm:active {
+  transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+a.link:link,
+a.link:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgb(18, 146, 238);
+}
+
+a:active {
+
+}
+
+
+a.btn-sm {
+  font-size: 0.8rem;
+}
+
+.input-col {
+  margin-bottom: 2px;
+}
+
+input {
+  padding: 3px;
+  border-radius: 2px;
+  border: 0.5px solid;
+}
+
+form.form-inline {
+  display: inline;
+}
+
+.brand-col {
+  background-color: #F0ECE3;
+  border: 1.5px solid #6C4241;
+  margin-bottom: 5px;
+  padding: 10px;
+}
