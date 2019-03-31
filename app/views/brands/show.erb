@@ -1,6 +1,6 @@
 <h1><%= @brand.name %></h1>
 <p>Style: <%= @brand.style %></p>
-<p>ABV: <%= @brand.ABV %></p>
+<p>ABV(Alcohol By Volue): <%= @brand.abv %></p>
 <p>at <%= @brand.brewery.name %></p>
 
 <% if @brand.brewery_id == @current_user.id %>

@@ -16,7 +16,6 @@ class BrandsController < ApplicationController
 
   post "/brands" do
     brand = current_user.brands.create(params)
-    binding.pry
     redirect "/brands/#{brand.id}"
   end
 
@@ -38,7 +37,7 @@ class BrandsController < ApplicationController
   patch "/brands/:id/edit" do
     brand = Brand.find_by_id(params[:id])
     if current_user.id == brand.brewery.id
-      brand.update(name: params[:name], style: params[:style], ABV:params[:ABV])
+      brand.update(name: params[:name], style: params[:style], abv:params[:abv])
       redirect "/brands/#{brand.id}"
     else
       redirect "/brands"
