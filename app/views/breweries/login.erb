@@ -1,29 +1,23 @@
-<% if logged_in? %>
-  <p>You are already signed up & logged in</p>
-  <p>Go to <a href="/breweries">Breweries</a></p>
-<% else %>
-  <% if flash.has?(:notice)  %>
-    <p class="error-msg"><%= flash[:notice] %></p>
-  <% end %>
-
-  <h3>Log in</h3>
-
-  <form action="/login" method="post">
-    <div class="input-col">
-      <label for="email">Email: </label>
-      <input type="email" name="email" required>
-    </div>
-
-    <div class="input-col">
-      <label for="password">Password: </label>
-      <input type="password" name="password" required>
-    </div>
-
-    <input type="submit" value="Log In" class="btn-sm">
-
-  </form>
-
-  <p class="mt">Need to sign up?</p>
-  <a href="/signup" class="btn-sm">Sign Up</a>
-
+<% if flash.has?(:notice) %>
+  <p class="error-msg"><%= flash[:notice] %></p>
 <% end %>
+
+<h3>Log in</h3>
+
+<form action="/login" method="post">
+  <div class="input-col">
+    <label for="email">Email: </label>
+    <input type="email" name="email" required>
+  </div>
+
+  <div class="input-col">
+    <label for="password">Password: </label>
+    <input type="password" name="password" required>
+  </div>
+
+  <input type="submit" value="Log In" class="btn-sm">
+
+</form>
+
+<p class="mt">Need to sign up?</p>
+<a href="/signup" class="btn-sm">Sign Up</a>

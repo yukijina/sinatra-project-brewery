@@ -7,6 +7,11 @@
   <p class="error-msg"><%= flash[:notice] %></p>
 <% end %>
 
+<% if logged_in? %>
+  <p>You are already signed up & logged in</p>
+  <p>Go to <a href="/breweries">Breweries</a></p>
+
+<% else %>
 <form action="/signup" method="post">
   <div class="input-col">
     <label for="name">Name: </label>
@@ -34,3 +39,5 @@
 
 <p class="mt">Already have an account?</p>
 <a href="/login" class="btn-sm">Log in</a>
+
+<% end  %>
