@@ -1,19 +1,18 @@
 class BreweriesController < ApplicationController
 
   get "/signup" do
-    # if logged_in?
-    #   redirect "/login"
-    #   ## redirect to brewery page
-    # else
+    if logged_in?
+      redirect "/login"
+    else
       erb :"/breweries/new"
-    #end
+    end
   end
 
   post "/signup" do
     @brewery = Brewery.new(params)
-    #Can't sign up if there is the same email in the db
     if !Brewery.all.where({email:params[:email]}).empty?
-       redirect "/signup"
+      flash.now[:notice] = "The email you entered is already taken. Please use another email address. OR please log in if you alerady have an account."
+      erb :"/breweries/new"
     elsif @brewery.save
       session[:brewery_id] = @brewery.id
       redirect "/breweries/#{@brewery.id}"
