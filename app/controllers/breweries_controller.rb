@@ -1,11 +1,7 @@
 class BreweriesController < ApplicationController
 
   get "/signup" do
-    if logged_in?
-      redirect "/login"
-    else
-      erb :"/breweries/new"
-    end
+    erb :"/breweries/new"
   end
 
   post "/signup" do
@@ -23,14 +19,21 @@ class BreweriesController < ApplicationController
   end
 
   get "/login" do
-    erb :"/breweries/login"
+    if logged_in?
+      redirect "/breweries"
+    else
+      erb :"/breweries/login"
+    end
   end
 
   post "/login" do
-    brewery = Brewery.find_by(email: params[:email])
-    if brewery && brewery.authenticate(params[:password])
-      session[:brewery_id] = brewery.id
-      redirect "/breweries/#{brewery.id}"
+    @brewery = Brewery.find_by(email: params[:email])
+    if @brewery && @brewery.authenticate(params[:password])
+      session[:brewery_id] = @brewery.id
+
+      flash.now[:notice] = "You're successfully logged in!"
+      erb :"/breweries/show"
+
     else
       flash.now[:notice] = "Email and password do not match"
       erb :"breweries/login"
