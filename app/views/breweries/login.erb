@@ -1,6 +1,6 @@
 <% if logged_in? %>
-  <p>You are already logged in.</p>
-  
+  <p>You are already signed up & logged in</p>
+  <p>Go to <a href="/breweries">Breweries</a></p>
 <% else %>
   <% if flash.has?(:notice)  %>
     <p class="error-msg"><%= flash[:notice] %></p>
