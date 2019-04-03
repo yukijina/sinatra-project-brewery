@@ -57,13 +57,10 @@ class BreweriesController < ApplicationController
   end
 
   get "/breweries/:id" do
-    if logged_in?
-      @brewery = Brewery.find_by_id(params[:id])
-      current_user
-      erb :"/breweries/show"
-    else
-      redirect "/login"
-    end
+    redirect_to_logged_in
+    @brewery = Brewery.find_by_id(params[:id])
+    current_user
+    erb :"/breweries/show"
   end
 
 end
