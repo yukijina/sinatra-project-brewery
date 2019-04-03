@@ -1,7 +1,11 @@
 <% if logged_in? %>
   <p>You are already logged in.</p>
-
+  
 <% else %>
+  <% if flash.has?(:notice)  %>
+    <p class="error-msg"><%= flash[:notice] %></p>
+  <% end %>
+
   <h3>Log in</h3>
 
   <form action="/login" method="post">

@@ -1,11 +1,12 @@
 class BreweriesController < ApplicationController
 
   get "/signup" do
-    if logged_in?
-      redirect "/login"
-    else
+    # if logged_in?
+    #   redirect "/login"
+    #   ## redirect to brewery page
+    # else
       erb :"/breweries/new"
-    end
+    #end
   end
 
   post "/signup" do
@@ -17,6 +18,7 @@ class BreweriesController < ApplicationController
       session[:brewery_id] = @brewery.id
       redirect "/breweries/#{@brewery.id}"
     else
+      flash.now[:notice] = @brewery.errors.full_messages
       erb :"/breweries/new"
     end
   end
@@ -31,7 +33,9 @@ class BreweriesController < ApplicationController
       session[:brewery_id] = brewery.id
       redirect "/breweries/#{brewery.id}"
     else
-      redirect "/login"
+      flash.now[:notice] = "Email and password do not match"
+      erb :"breweries/login"
+      #flash.now => erb
     end
   end
 

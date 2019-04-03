@@ -1,6 +1,8 @@
 <h3>Sign up</h3>
-<% if @brewery && @brewery.errors.any? %>
-  <p>The form can't be blank. Please fill out the form</p>
+<% if flash.has?(:notice)  %>
+  <% flash[:notice].each do |message| %>
+    <p class="error-msg"><%= message %></p>
+  <% end %>
 <% end %>
 
 <form action="/signup" method="post">
