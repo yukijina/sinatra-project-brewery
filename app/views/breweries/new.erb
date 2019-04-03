@@ -1,8 +1,10 @@
 <h3>Sign up</h3>
-<% if flash.has?(:notice)  %>
+<% if flash.has?(:notice) && flash[:notice].kind_of?(Array) %>
   <% flash[:notice].each do |message| %>
     <p class="error-msg"><%= message %></p>
   <% end %>
+<% elsif flash.has?(:notice) && flash[:notice].kind_of?(String) %>
+  <p class="error-msg"><%= flash[:notice] %></p>
 <% end %>
 
 <form action="/signup" method="post">
