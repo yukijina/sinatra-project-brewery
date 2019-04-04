@@ -3,26 +3,25 @@
   <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
 
 <% elsif @current_user.id == @brand.brewery.id %>
-<form action="/brands/<%= @brand.id %>/edit" method="post">
-  <input type="hidden" id="hidden" name="_method" value="patch">
+  <form action="/brands/<%= @brand.id %>/edit" method="post">
+    <input type="hidden" id="hidden" name="_method" value="patch">
 
-  <div class="input-col">
-    <label for="name">Brand Name: </label>
-    <input type="text" name="name" value="<%= @brand.name %>" required>
-  </div>
-  <div class="input-col">
-    <label for="style">Style: </label>
-    <input type="text" name="style" value="<%= @brand.style %>" required>
-  </div>
-  <div class="input-col">
-    <label for="abv">Alcohole By Volume (ABV): </label>
-    <input type="text" name="abv" value="<%= @brand.abv %>" required>
-  </div>
+    <div class="input-col">
+      <label for="name">Brand Name: </label>
+      <input type="text" name="name" value="<%= @brand.name %>" required>
+    </div>
+    <div class="input-col">
+      <label for="style">Style: </label>
+      <input type="text" name="style" value="<%= @brand.style %>" required>
+    </div>
+    <div class="input-col">
+      <label for="abv">Alcohole By Volume (ABV): </label>
+      <input type="text" name="abv" value="<%= @brand.abv %>" required>
+    </div>
 
-  <input type="submit" value="Edit" class="btn-sm">
-</form>
+    <input type="submit" value="Edit" class="btn-sm">
+  </form>
 
 <% else %>
   <p class="error-msg">Sorry. Brewery can edit its own brand only <i class="far fa-dizzy"></i></p>
-
 <% end %>
