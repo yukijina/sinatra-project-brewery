@@ -1,12 +1,9 @@
 # Brewery Club
 
 Sinatra project with RESTful route.
-Brewery lists with its beer brand information.
+Brewery lists and its brand information.
 
 ## Usage
-
-To use this app, just clone, run `rake db:migrate` and then run `shotgun`.
-Everything should be set up.
 
 To get started, you should clone the repository from GitHub. In your terminal:
 
@@ -20,8 +17,11 @@ Make sure that you have the latest bundler version installed.
 
 `bundle install`
 
+To use this app, run `rake db:migrate`
+
 Once that is complete, you should only need to run `shotgun` in the application root and visit: `localhost:9393`
 
+Everything should be set up.
 
 
 ## Contributing
