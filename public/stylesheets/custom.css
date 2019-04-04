@@ -175,9 +175,6 @@ a:hover {
   color: rgb(18, 146, 238);
 }
 
-a:active {
-
-}
 
 a.link:link,
 a.link:visited {
@@ -188,8 +185,6 @@ a.link:visited {
 a.link:hover {
   color: rgb(141, 201, 244);
 }
-
-
 
 a.btn-sm {
   font-size: 0.8rem;
@@ -223,6 +218,14 @@ form.form-inline {
 
 .mb {
   margin-bottom: 3%;
+}
+
+.error-msg {
+  color: rgb(242, 85, 27);
+}
+
+.success-msg {
+  color: rgb(19, 187, 10);
 }
 
 /* Navigation Bar */
