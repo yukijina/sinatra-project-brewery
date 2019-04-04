@@ -44,7 +44,9 @@ class BreweriesController < ApplicationController
   get "/logout" do
     if logged_in?
       session.clear
-      redirect "/"
+      # redirect "/"
+      flash.now[:notice] = "You're successfully logged out."
+      erb :index
     else
       redirect "/login"
     end

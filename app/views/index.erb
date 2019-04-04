@@ -1,3 +1,7 @@
+<% if flash.has?(:notice) %>
+  <p class="success-msg"><%= flash[:notice] %></p>
+<% end %>
+
 <div class="content">
   <h3>Welcome to Brewery Club!</h3>
     <a href="/signup" class="btn">Sign Up</a>
