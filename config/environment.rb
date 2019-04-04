@@ -9,5 +9,4 @@ ActiveRecord::Base.establish_connection(
 )
 
 require 'rack-flash'
-require './app/controllers/application_controller'
 require_all 'app'
