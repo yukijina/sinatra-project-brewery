@@ -1,19 +1,28 @@
 <h1>Register Your Brand</h1>
 
 <form action="/brands" method="post">
-  <div class="input-col">
-    <label for="name">Brand Name: </label>
-    <input type="text" name="name">
-  </div>
+  <div class="input-wrapper">
+    <div class="input-col">
+      <div class="input-col-title">
+        <label for="name">Brand Name: </label>
+      </div>
+      <input type="text" name="name">
+    </div>
 
-  <div class="input-col">
-    <label for="style">Style: </label>
-    <input type="text" name="style">
-  </div>
+    <div class="input-col">
+      <div class="input-col-title">
+        <label for="style">Style: </label>
+      </div>
+      <input type="text" name="style">
+    </div>
 
-  <div class="input-col">
-    <label for="abv">Alcohole By Volume (ABV): </label>
-    <input type="text" name="abv">
+    <div class="input-col">
+      <div class="input-col-title">
+        <label for="abv">Alcohole By Volume (ABV): </label>
+      </div>
+      <input type="text" name="abv">
+    </div>
   </div>
-  <input type="submit" value="Register" class="btn-sm">
+  
+  <input type="submit" value="Register" class="btn-sm mt">
 </form>

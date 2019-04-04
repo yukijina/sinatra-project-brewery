@@ -7,19 +7,25 @@
     <input type="hidden" id="hidden" name="_method" value="patch">
 
     <div class="input-col">
-      <label for="name">Brand Name: </label>
+      <div class="input-col-title">
+        <label for="name">Brand Name: </label>
+      </div>
       <input type="text" name="name" value="<%= @brand.name %>" required>
     </div>
     <div class="input-col">
-      <label for="style">Style: </label>
+      <div class="input-col-title">
+        <label for="style">Style: </label>
+      </div>
       <input type="text" name="style" value="<%= @brand.style %>" required>
     </div>
     <div class="input-col">
-      <label for="abv">Alcohole By Volume (ABV): </label>
+      <div class="input-col-title">
+        <label for="abv">Alcohole By Volume (ABV): </label>
+      </div>
       <input type="text" name="abv" value="<%= @brand.abv %>" required>
     </div>
 
-    <input type="submit" value="Edit" class="btn-sm">
+    <input type="submit" value="Edit" class="btn-sm mt">
   </form>
 
 <% else %>
