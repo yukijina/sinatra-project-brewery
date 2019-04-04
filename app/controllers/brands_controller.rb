@@ -59,11 +59,10 @@ class BrandsController < ApplicationController
     brand = Brand.find_by_id(params[:id])
      if brand && brand.brewery.id == session[:brewery_id]
       brand.delete
-      redirect "/breweries/#{current_user[:id]} >"
+      redirect "/breweries/#{current_user[:id]}"
     else
       redirect "/login"
     end
   end
-
 
 end
