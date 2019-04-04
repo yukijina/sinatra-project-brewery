@@ -35,8 +35,13 @@ class BrandsController < ApplicationController
   #EDIT
   get "/brands/:id/edit" do
     redirect_to_logged_in
-    @brand = Brand.find_by_id(params[:id])
-    erb :"/brands/edit"
+    current_user
+    if @brand = Brand.find_by_id(params[:id])
+      erb :"/brands/edit"
+    else
+      no_matching_page
+      erb :"/brands/edit"
+    end
   end
 
   patch "/brands/:id/edit" do
