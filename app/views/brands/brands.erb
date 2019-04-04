@@ -1,17 +1,22 @@
-<h1>All Brands</h1>
-<h2>Hey, <%= @current_user.name %>!</h2>
-<p>Here is the list of all brands of Brewery Club! Click the button to see more details.</p>
+<% if @no_matching_page %>
+  <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
 
-<h3>Brand: </h3>
-<% @brands.all.select do |brand| %>
-  <div class="brand-col">
-    <h4><%= brand.name %></h4>
-    <h5>Style: <%= brand.style %></h5>
+<% else %>
+  <h1>All Brands</h1>
+  <h2>Hey, <%= @current_user.name %>!</h2>
+  <p>Here is the list of all brands of Brewery Club! Click the button to see more details.</p>
 
-    <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+  <h3>Brand: </h3>
+  <% @brands.each do |brand| %>
+    <div class="brand-col">
+      <h4><%= brand.name %></h4>
+      <h5>Style: <%= brand.style %></h5>
 
-    <% if brand.brewery_id == @current_user.id %>
-    <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
-    <% end %>
-  </div>
+      <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+      <% if brand.brewery_id == @current_user.id %>
+      <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+      <% end %>
+    </div>
+  <% end %>
 <% end %>

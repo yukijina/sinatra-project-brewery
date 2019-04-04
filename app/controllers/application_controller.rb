@@ -25,6 +25,10 @@ class ApplicationController < Sinatra::Base
       redirect "/login" unless logged_in?
     end
 
+    def no_matching_page
+      @no_matching_page ||= flash.now[:notice] = "Sorry, there is no matching page "
+    end
+
   end
 
 end

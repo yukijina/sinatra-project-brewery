@@ -58,9 +58,13 @@ class BreweriesController < ApplicationController
 
   get "/breweries/:id" do
     redirect_to_logged_in
-    @brewery = Brewery.find_by_id(params[:id])
-    current_user
-    erb :"/breweries/show"
+    if @brewery = Brewery.find_by_id(params[:id])
+      current_user
+      erb :"/breweries/show"
+    else
+      no_matching_page
+      erb :"/breweries/breweries"
+    end
   end
 
 end

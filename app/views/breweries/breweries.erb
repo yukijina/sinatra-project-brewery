@@ -1,6 +1,11 @@
-<h1>Brewery Member List:</h1>
-<% @breweries.each.with_index(1) do |brewery, index| %>
-  <h3 class="mt"><%= index %>. <%= brewery.name %></h3>
-  <p><%= brewery.city %></p>
-  <a href="/breweries/<%= brewery.id %>" class="link">More about <%= brewery.name %></a>
+<% if @no_matching_page %>
+  <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
+
+<% else  %>
+  <h1>Brewery Member List:</h1>
+  <% @breweries.each.with_index(1) do |brewery, index| %>
+    <h3 class="mt"><%= index %>. <%= brewery.name %></h3>
+    <p><%= brewery.city %></p>
+    <a href="/breweries/<%= brewery.id %>" class="link">More about <%= brewery.name %></a>
+  <% end %>
 <% end %>
