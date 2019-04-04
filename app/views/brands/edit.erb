@@ -1,5 +1,8 @@
 <h1>Edit Brand</h1>
+<% if @no_matching_page %>
+  <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
 
+<% elsif @current_user.id == @brand.brewery.id %>
 <form action="/brands/<%= @brand.id %>/edit" method="post">
   <input type="hidden" id="hidden" name="_method" value="patch">
 
@@ -18,3 +21,8 @@
 
   <input type="submit" value="Edit" class="btn-sm">
 </form>
+
+<% else %>
+  <p class="error-msg">Sorry. Brewery can edit its own brand only <i class="far fa-dizzy"></i></p>
+
+<% end %>
