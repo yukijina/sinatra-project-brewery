@@ -170,7 +170,6 @@ a:hover {
   color: rgb(18, 146, 238);
 }
 
-
 a.link:link,
 a.link:visited {
   text-decoration: underline;
@@ -246,4 +245,13 @@ nav li {
   border-radius: 50px;
   border: 1.2px solid rgb(208, 131, 28);
   margin-right: 0.5%;
+}
+
+/* Brewery Show Page */
+ul.brands-wrapper {
+  width: 30%;
+  margin: 0 auto;
+}
+li.brands {
+  text-align: left;
 }
