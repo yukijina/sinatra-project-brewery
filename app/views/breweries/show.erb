@@ -14,8 +14,8 @@
 <% if @brewery.brands.empty? %>
   <p><%= @brewery.name  %> does not have any brands.</p>
   <% else @brewery.brands.each do |brand| %>
-    <ul>
-      <li>
+    <ul class="brands-wrapper">
+      <li class="brands">
           <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
       </li>
     </ul>
