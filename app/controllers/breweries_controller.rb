@@ -6,10 +6,10 @@ class BreweriesController < ApplicationController
 
   post "/signup" do
     @brewery = Brewery.new(params)
-    if !Brewery.all.where({email:params[:email]}).empty?
-      flash.now[:notice] = "The email you entered is already taken. Please use another email address. OR please log in if you alerady have an account."
-      erb :"/breweries/new"
-    elsif @brewery.save
+    # if #!Brewery.all.where({email:params[:email]}).empty?
+    #   flash.now[:notice] = "The email you entered is already taken. Please use another email address. OR please log in if you alerady have an account."
+    #  erb :"/breweries/new"
+    if @brewery.save
       session[:brewery_id] = @brewery.id
       redirect "/breweries/#{@brewery.id}"
     else
