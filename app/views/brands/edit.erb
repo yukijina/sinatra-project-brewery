@@ -10,19 +10,19 @@
       <div class="input-col-title">
         <label for="name">Brand Name: </label>
       </div>
-      <input type="text" name="name" value="<%= @brand.name %>" required>
+      <input type="text" name="brand[name]" value="<%= @brand.name %>" required>
     </div>
     <div class="input-col">
       <div class="input-col-title">
         <label for="style">Style: </label>
       </div>
-      <input type="text" name="style" value="<%= @brand.style %>" required>
+      <input type="text" name="brand[style]" value="<%= @brand.style %>" required>
     </div>
     <div class="input-col">
       <div class="input-col-title">
         <label for="abv">Alcohole By Volume (ABV): </label>
       </div>
-      <input type="text" name="abv" value="<%= @brand.abv %>" required>
+      <input type="text" name="brand[abv]" value="<%= @brand.abv %>" required>
     </div>
 
     <input type="submit" value="Edit" class="btn-sm mt">
