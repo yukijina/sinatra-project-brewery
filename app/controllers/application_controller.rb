@@ -14,7 +14,8 @@ class ApplicationController < Sinatra::Base
 
   helpers do
     def logged_in?
-      !!session[:brewery_id]
+      #!!session[:brewery_id]
+      session.has_key?(:brewery_id)
     end
 
     def current_user
