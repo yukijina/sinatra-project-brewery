@@ -1,27 +1,40 @@
-<h1><%= @brand.name %></h1>
-<p>Style: <%= @brand.style %></p>
-<p>ABV(Alcohol By Volue): <%= @brand.abv %></p>
-<p>at <%= @brand.brewery.name %></p>
-
-<% if @brand.brewery_id == @current_user.id %>
-  <a href="/brands/<%= @brand.id %>/edit" class="btn-sm">Edit</a>
-  <a href="/brands/new" class="btn-sm">Register a new brand</a>
-
-  <form action="/brands/<%= @brand.id %>" method="post" class="form-inline">
-    <input type="hidden" id="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete" class="btn-sm mb">
-  </form>
-
-<% end %>
-
-<div>
-  <a href="/breweries/<%= @brand.brewery.id %>" class="link">More about this Brewery</a>
+<div class="row">
+  <div class="col-12 text-center">
+    <h1 class="my-5"><%= @brand.name %></h1>
+    <p>Style: <%= @brand.style %></p>
+    <p>ABV(Alcohol By Volue): <%= @brand.abv %></p>
+    <p>at <%= @brand.brewery.name %></p>
+  </div>
 </div>
 
-<div>
-  <a href="/brands" class="link">All brands</a>
+<div class="row">
+  <div class="col-12 text-center my-5">
+    <% if @brand.brewery_id == @current_user.id %>
+      <a href="/brands/<%= @brand.id %>/edit" class="btn-sm">Edit</a>
+      <a href="/brands/new" class="btn-sm">Register a new brand</a>
+
+      <form action="/brands/<%= @brand.id %>" method="post" class="form-inline">
+        <input type="hidden" id="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete" class="btn-sm mb">
+      </form>
+    <% end %>
+  </div>
 </div>
 
-<div>
-  <a href="/breweries" class="link">All breweries</a>
+<div class="row">
+  <div class="col-12 text-left">
+    <a href="/breweries/<%= @brand.brewery.id %>" class="link">More about this Brewery</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 text-left">
+    <a href="/brands" class="link">All brands</a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12 text-left">
+    <a href="/breweries" class="link">All breweries</a>
+  </div>
 </div>

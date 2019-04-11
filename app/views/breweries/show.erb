@@ -1,29 +1,54 @@
-<%# Render from log in form %>
-<% if flash.has?(:notice) %>
-  <p class="success-msg"><%= flash[:notice] %></p>
-<% end %>
+<!-- FLASH MESSAGE -->
+  <div class="row">
+    <div class="col-12">
+      <%# Render from log in form %>
+      <% if flash.has?(:notice) %>
+        <p class="success-msg"><%= flash[:notice] %></p>
+      <% end %>
+    </div>
+  </div>
+  <!-- TITLE -->
+  <div class="row">
+    <div class="col-12">
+      <h1><%= @brewery.name %></h1>
+    </div>
+  </div>
 
-<h1><%= @brewery.name %></h1>
+  <!-- DESCRIPTION -->
+  <div class="row">
+    <div class="col-12">
+      <% if @current_user == @brewery %>
+        <p>your member ID: <%= @brewery.id %></p>
+        <p>your email: <%= @brewery.email %></p>
+      <% end %>
+      <p>City: <%= @brewery.city %></p>
+    </div>
+  </div>
+
+  <!-- WHAT'S ON TOP -->
+  <div class="row">
+    <div class="col-7 brewery-show">
+      <h2 class="text-center mb">What's on tap at <%= @brewery.name %></h2>
+      <% if @brewery.brands.empty? %>
+        <p class="text-center"><%= @brewery.name  %> does not have any brands.</p>
+        <% else @brewery.brands.each do |brand| %>
+          <ul class="brands-wrapper">
+            <li class="brands text-center">
+                <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
+            </li>
+          </ul>
+        <% end  %>
+      <% end  %>
+    </div>
+  </div>
+
 
 <% if @current_user == @brewery %>
-  <p>your member ID: <%= @brewery.id %></p>
-  <p>your email: <%= @brewery.email %></p>
-<% end %>
-<p>City: <%= @brewery.city %></p>
-<h3>What's on tap at <%= @brewery.name %></h3>
-<% if @brewery.brands.empty? %>
-  <p><%= @brewery.name  %> does not have any brands.</p>
-  <% else @brewery.brands.each do |brand| %>
-    <ul class="brands-wrapper">
-      <li class="brands">
-          <a href="/brands/<%= brand.id %>"><%= brand.name %></a>
-      </li>
-    </ul>
-  <% end  %>
-<% end  %>
-
-<% if @current_user == @brewery %>
-  <a href="/brands/new" class="btn-sm mt mb">Register your brand</a>
+  <div class="row">
+    <div class="col-12 text-center">
+      <a href="/brands/new" class="btn-sm mt mb">Register your brand</a>
+    </div>
+  </div>
 <% end  %>
 
 <div class="mt">

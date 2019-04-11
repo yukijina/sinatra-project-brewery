@@ -1,51 +1,72 @@
-<h3>Sign up</h3>
-<% if flash.has?(:notice) && flash[:notice].kind_of?(Array) %>
-  <% flash[:notice].each do |message| %>
-    <p class="error-msg"><%= message %></p>
-  <% end %>
-<% elsif flash.has?(:notice) && flash[:notice].kind_of?(String) %>
-  <p class="error-msg"><%= flash[:notice] %></p>
-<% end %>
-
-<% if logged_in? %>
-  <p>You are already signed up & logged in</p>
-  <p>Go to <a href="/breweries">Breweries</a></p>
-
-<% else %>
-<form action="/signup" method="post">
-  <div class="input-col">
-    <div class="input-col-title">
-      <label for="name">Name: </label>
+<div class="content">
+  <!-- TITLE -->
+  <div class="row">
+    <div class="col-12">
+      <h3>Sign up</h3>
     </div>
-    <input type="text" name="name">
+  </div>
+  <!-- ERROR MESSAGE -->
+  <div class="row">
+    <div class="col-12">
+      <% if flash.has?(:notice) && flash[:notice].kind_of?(Array) %>
+        <% flash[:notice].each do |message| %>
+          <p class="error-msg"><%= message %></p>
+        <% end %>
+      <% elsif flash.has?(:notice) && flash[:notice].kind_of?(String) %>
+        <p class="error-msg"><%= flash[:notice] %></p>
+      <% end %>
+
+      <% if logged_in? %>
+        <p>You are already signed up & logged in</p>
+        <p>Go to <a href="/breweries">Breweries</a></p>
+    </div>
   </div>
 
-  <div class="input-col">
-    <div class="input-col-title">
-      <label for="email">Email: </label>
+  <!-- FORM/INPUT -->
+  <div class="row">
+    <div class="col-12">
+      <% else %>
+      <form action="/signup" method="post">
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="name">Name: </label>
+          </div>
+          <input type="text" name="name">
+        </div>
+
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="email">Email: </label>
+          </div>
+          <input type="email" name="email">
+        </div>
+
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="city">City :</label>
+          </div>
+          <input type="text" name="city">
+        </div>
+
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="password">Password: </label>
+          </div>
+          <input type="password" name="password">
+        </div>
+
+        <input type="submit" value="Sign Up" class="btn-sm">
+      </form>
     </div>
-    <input type="email" name="email">
   </div>
 
-  <div class="input-col">
-    <div class="input-col-title">
-      <label for="city">City :</label>
+  <!-- REDIRECT TO LOGIN -->
+  <div class="row">
+    <div class="col-12">
+      <p class="mt">Already have an account?</p>
+      <a href="/login" class="btn-sm">Log in</a>
+      <% end  %>
     </div>
-    <input type="text" name="city">
   </div>
 
-  <div class="input-col">
-    <div class="input-col-title">
-      <label for="password">Password: </label>
-    </div>
-    <input type="password" name="password">
-  </div>
-
-  <input type="submit" value="Sign Up" class="btn-sm">
-
-</form>
-
-<p class="mt">Already have an account?</p>
-<a href="/login" class="btn-sm">Log in</a>
-
-<% end  %>
+</div>  <!--  the end of content -->

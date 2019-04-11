@@ -1,11 +1,23 @@
 <% if @no_matching_page %>
-  <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
+  <div class="row col-12">
+    <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
+  </div>
 
 <% else  %>
-  <h1>Brewery Member List:</h1>
-  <% @breweries.each.with_index(1) do |brewery, index| %>
-    <h3 class="mt"><%= index %>. <%= brewery.name %></h3>
-    <p><%= brewery.city %></p>
-    <a href="/breweries/<%= brewery.id %>" class="link">More about <%= brewery.name %></a>
-  <% end %>
+  <div class="row col-12">
+    <h1>Brewery Member List:</h1>
+  </div>
+
+  <div class="row col-12">
+    <% @breweries.each.with_index(1) do |brewery, index| %>
+    <div class="col-4">
+      <div class="col-12 brewery-card">
+      <h4><%= index %>. <%= brewery.name %></h4>
+      <p><%= brewery.city %></p>
+      <a href="/breweries/<%= brewery.id %>" class="btn-sm btn-text">More about <%= brewery.name %></a>
+    </div>
+    </div>
+    <% end %>
+  </div>
+
 <% end %>
