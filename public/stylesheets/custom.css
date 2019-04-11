@@ -1,109 +1,69 @@
-@media screen {
-  /* --- Reset Styles --- */
-  * {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  html, body {
-    height: 100%;
-    width: 100%;
-  }
-
-  /* --- Welcome Page Styles --- */
-  body {
-    color: #333;
-    line-height: 18px;
-  }
-
-  .wrapper {
-    background: #fefefe;
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
-    box-shadow: 0 0 10px rgba(0,0,0,.3);
-    margin: 16px auto;
-    max-width: 960px;
-    padding: 2.25%; /* 18px / 800px */
-    width: 85%;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 2.6em;
-    line-height: 56px;
-    margin-bottom: 2%;
-  }
-
-  h2 {
-    border-bottom: 2px solid #ccc;
-    font-size: 1.8em;
-    line-height: 2.2em;
-    margin-bottom: 16px;
-  }
-
-  h3 {
-    font-size: 1.5em;
-    line-height: 36px;
-    margin-bottom: 1.5%;
-  }
-
-  p {
-    font-size: 1.2em;
-    margin-bottom: 18px;
-  }
-
-  header {
-    width: 50%;
-    margin: 0 auto;
-  }
-
-  .content {
-    width: 60%;
-    margin: 2% auto;
-  }
-
-  footer.branding {
-    border-top: 2px solid #ccc;
-    margin-top: 20px;
-    padding-top: 20px;
-  }
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 600px) {
-  .wrapper {
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    width: auto;
-  }
-
-  h1 {
-    font-size: 24px;
-    line-height: 36px;
-  }
-
-  h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
+/* --- Welcome Page Styles --- */
 body {
   background-image: url(/images/background.jpg);
-  color: #333;
+  background-position: center;
+  background-size: cover;
+  color: #fefefe;
   font-family: 'Lato', sans-serif;
-  line-height: 18px;
+  margin-top: 10%;
 }
 
-h2.title {
+a.navbar-brand {
   font-family: 'Cookie', cursive;
   letter-spacing: 5px;
   font-weight: 300;
 }
 
-.content h3 {
-  margin-bottom: 3%;
+footer.branding {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+h1 {
+  border-bottom: 3px solid;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* BREWERIES  */
+.brewery-card {
+  background-color: #F0ECE3;
+  color: #333;
+  height: 200px;
+  padding: 22px 20px;
+  margin-bottom: 8%;
+  border: 1.5px solid rgb(208, 131, 28);
+}
+
+/* BREWERIES SHOW  */
+.brewery-show {
+  margin: 0 auto;
+  padding: 5%;
+  border: 1.5px solid rgb(208, 131, 28);
+}
+
+/* BRANDS */
+
+.brand-col {
+  background-color: #F0ECE3;
+  color: #333;
+  border: 1.5px solid rgb(208, 131, 28);
+  /* border: 1.5px solid #6C4241; */
+  margin: 5px auto;
+  padding: 18px;
 }
 
 .btn {
@@ -159,25 +119,28 @@ h2.title {
     box-shadow: 0 5px 10px rgba(0,0,0,.2);
 }
 
+.btn-sm.btn-text {
+  font-size: 0.8em;
+}
+
 a:link,
 a:visited {
   text-decoration: none;
-  color: #333;
+  color: #fefefe;
   font-size: 1.1em;
 }
 
 a:hover {
-  color: rgb(18, 146, 238);
+  color: rgb(208, 131, 28);
 }
 
 a.link:link,
 a.link:visited {
   text-decoration: underline;
-  color: rgb(18, 146, 238);
 }
 
 a.link:hover {
-  color: rgb(141, 201, 244);
+  color: rgb(208, 131, 28);
 }
 
 a.btn-sm {
@@ -189,6 +152,7 @@ input {
   border: none;
   border-bottom: 0.5px solid;
   font-size: 1em;
+  width: 330px;
 }
 
 .input-wrapper {
@@ -211,12 +175,6 @@ form.form-inline {
   display: inline;
 }
 
-.brand-col {
-  background-color: #F0ECE3;
-  border: 1.5px solid #6C4241;
-  margin: 5px auto;
-  padding: 18px;
-}
 
 .mt {
   margin-top: 5%;
@@ -231,11 +189,11 @@ form.form-inline {
 }
 
 .success-msg {
-  color: rgb(19, 187, 10);
+  color: rgb(18, 139, 11);
 }
 
 /* Navigation Bar */
-nav {
+/* nav {
   text-align: center;
 }
 nav li {
@@ -245,13 +203,13 @@ nav li {
   border-radius: 50px;
   border: 1.2px solid rgb(208, 131, 28);
   margin-right: 0.5%;
-}
+} */
 
 /* Brewery Show Page */
-ul.brands-wrapper {
-  width: 30%;
+/* ul.brands-wrapper {
+#  width: 30%;
   margin: 0 auto;
-}
-li.brands {
-  text-align: left;
-}
+} */
+/* li.brands {
+  text-align: center;
+} */
