@@ -6,9 +6,9 @@
 </div>
 
 <div class="row">
-  <div class="col-12">
+  <div class="col-12 my-5">
     <% else %>
-      <h1>All Brands</h1>
+      <h1>ALL BRANDS</h1>
       <h2>Hey, <%= @current_user.name %>!</h2>
       <p>Here is the list of all brands of Brewery Club! Click the button to see more details.</p>
   </div>
@@ -16,20 +16,157 @@
 
 <div class="row">
   <div class="col-12">
-    <h3>Brand: </h3>
+    <h3><i class="fas fa-beer"></i> Style: </h3>
   </div>
 </div>
 
-  <% @brands.each do |brand| %>
-    <div class="brand-col">
-      <h4><%= brand.name %></h4>
-      <h5>Style: <%= brand.style %></h5>
+<!-- ALE -->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ ALE ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @ale.each do |brand| %>
+    <div class="col-4  ">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+  <%# @brands.each do |brand| %>
+    <!-- <div class="brand-card">
+      <h4><%#= brand.name %></h4>
+      <h5>Style: <%#= brand.style %></h5> -->
 
       <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
 
       <% if brand.brewery_id == @current_user.id %>
       <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
       <% end %>
+      </div>
     </div>
-  <% end %>
+  <% end.sort %>
+</div>
+
+<!-- IPA-->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ IPA ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @ipa.each do |brand| %>
+    <div class="col-4  ">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+        <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+        <% if brand.brewery_id == @current_user.id %>
+        <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+        <% end %>
+      </div>
+    </div>
+  <% end.sort %>
+</div>
+
+<!-- IPA-->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ LAGER ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @lager.each do |brand| %>
+    <div class="col-4  ">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+        <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+        <% if brand.brewery_id == @current_user.id %>
+        <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+        <% end %>
+      </div>
+    </div>
+  <% end.sort %>
+</div>
+
+<!-- PILSNER-->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ PILSNER ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @pilsner.each do |brand| %>
+    <div class="col-4  ">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+        <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+        <% if brand.brewery_id == @current_user.id %>
+        <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+        <% end %>
+      </div>
+    </div>
+  <% end.sort %>
+</div>
+
+<!-- STOUT -->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ STOUT ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @stout.each do |brand| %>
+    <div class="col-4  ">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+        <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+        <% if brand.brewery_id == @current_user.id %>
+        <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+        <% end %>
+      </div>
+    </div>
+  <% end.sort %>
+</div>
+
+<!-- OTHERS -->
+<div class="row">
+  <div class="col-12 mt-4">
+    <h4>[ OTHERS ]</h4>
+  </div>
+</div>
+
+<div class="row">
+  <% @others.each do |brand| %>
+    <div class="col-4">
+      <div class="col-12 brand-card">
+        <h4><%= brand.name %></h4>
+        <h5>Style: <%= brand.style %></h5>
+
+        <a href="/brands/<%= brand.id %>" class="btn-sm">More</a>
+
+        <% if brand.brewery_id == @current_user.id %>
+        <a href="/brands/<%= brand.id %>/edit" class="btn-sm">Edit</a>
+        <% end %>
+      </div>
+    </div>
+  <% end.sort %>
+</div>
+
 <% end %>
