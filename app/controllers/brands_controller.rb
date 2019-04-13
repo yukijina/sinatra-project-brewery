@@ -4,6 +4,30 @@ class BrandsController < ApplicationController
     redirect_to_logged_in
     current_user
     @brands = Brand.all
+
+    @ale = []
+    @ipa = []
+    @lager = []
+    @pilsner = []
+    @stout = []
+    @others = []
+    @brands.each do|brand|
+      if brand.style.downcase.include?("ale")
+        @ale << brand
+      elsif brand.style.downcase.include?("ipa")
+        @ipa << brand
+      elsif brand.style.downcase.include?("lager")
+        @lager << brand
+      elsif brand.style.downcase.include?("pilsner")
+        @pilsner << brand
+      elsif brand.style.downcase.include?("stout")
+        @stout << brand
+      else
+        @others << brand
+      end
+    end
+
+
     erb :"/brands/brands"
   end
 
