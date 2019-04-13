@@ -6,7 +6,7 @@
 }
 
 html, body {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 }
 
@@ -26,16 +26,34 @@ a.navbar-brand {
   font-weight: 300;
 }
 
+.container {
+  height: 100%;
+  position: relative;
+  padding-bottom: 5%;
+}
+
 footer.branding {
     border-top: 2px solid #ccc;
-    margin-top: 20px;
     padding-top: 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 3%;
 }
 
 h1 {
   border-bottom: 3px solid;
   display: inline-block;
+  letter-spacing: 2px;
   padding-bottom: 5px;
+}
+
+h2,h3,h4 {
+  letter-spacing: 2px;
+}
+
+.index {
+  height: 80vh;
 }
 
 /* BREWERIES  */
@@ -56,14 +74,14 @@ h1 {
 }
 
 /* BRANDS */
-
-.brand-col {
+.brand-card {
   background-color: #F0ECE3;
   color: #333;
   border: 1.5px solid rgb(208, 131, 28);
   /* border: 1.5px solid #6C4241; */
-  margin: 5px auto;
+  height: 180px;
   padding: 18px;
+  margin-bottom: 8%;
 }
 
 .btn {

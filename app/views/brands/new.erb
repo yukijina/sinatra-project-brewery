@@ -1,28 +1,35 @@
-<h1>Register Your Brand</h1>
-
-<form action="/brands" method="post">
-  <div class="input-wrapper">
-    <div class="input-col">
-      <div class="input-col-title">
-        <label for="name">Brand Name: </label>
-      </div>
-      <input type="text" name="name" required>
-    </div>
-
-    <div class="input-col">
-      <div class="input-col-title">
-        <label for="style">Style: </label>
-      </div>
-      <input type="text" name="style" required>
-    </div>
-
-    <div class="input-col">
-      <div class="input-col-title">
-        <label for="abv">Alcohole By Volume (ABV): </label>
-      </div>
-      <input type="text" name="abv" required>
-    </div>
+<div class="row">
+  <div class="col-12 text-center my-5">
+    <h1>Register Your Brand</h1>
   </div>
+</div>
 
-  <input type="submit" value="Register" class="btn-sm mt">
-</form>
+<div class="row">
+  <div class="col-12 text-center">
+    <form action="/brands" method="post">
+      <div class="input-wrapper">
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="name">Brand Name: </label>
+          </div>
+          <input type="text" name="name" required>
+        </div>
+
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="style">Style: </label>
+          </div>
+          <input type="text" name="style" required>
+        </div>
+
+        <div class="input-col">
+          <div class="input-col-title">
+            <label for="abv">Alcohole By Volume (ABV): </label>
+          </div>
+          <input type="text" name="abv" required>
+        </div>
+      </div>
+      <input type="submit" value="Register" class="btn-sm">
+    </form>
+  </div>
+</div>
