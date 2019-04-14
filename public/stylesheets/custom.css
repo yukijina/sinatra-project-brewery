@@ -64,6 +64,9 @@ h2,h3,h4 {
   margin-bottom: 8%;
   border: 1.5px solid rgb(208, 131, 28);
 }
+.brewery-card h4 {
+  height: 40%
+}
 
 /* BREWERIES SHOW  */
 .brewery-show {
@@ -157,39 +160,6 @@ a.link:visited {
   text-decoration: underline;
 }
 
-a.btn-sm {
-  background-color: rgb(244, 173, 79);
-}
-
-/* INPUT */
-input {
-  padding: 8px 5px;
-  border: none;
-  border-bottom: 0.5px solid;
-  font-size: 1em;
-  width: 330px;
-}
-
-.input-wrapper {
-  padding-bottom: 5%;
-}
-
-.input-col {
-  width: 60%;
-  height: 2em;
-  margin: 1% auto;
-}
-
-.input-col-title {
-  display: inline-block;
-  width: 20%;
-  text-align: left;
-}
-
-form.form-inline {
-  display: inline;
-}
-
 /* ERROR MESSAGE */
 .error-msg {
   color: rgb(242, 85, 27);
@@ -197,4 +167,35 @@ form.form-inline {
 
 .success-msg {
   color: rgb(18, 139, 11);
+}
+
+/* MEDIA QUERY  */
+@media only screen and (max-width: 460px) {
+  h2 {
+    font-size: 1.27rem;
+  }
+  .btn-sm.btn-media-block {
+    display: block;
+    margin: 10px auto;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.8rem;
+    margin-top: 5%;
+  }
+  footer.branding {
+    display: none;
+  }
+  .small-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  div.form-group {
+    widows: 100%;
+  }
 }
