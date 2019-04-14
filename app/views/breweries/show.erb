@@ -28,7 +28,7 @@
   <!-- WHAT'S ON TOP -->
   <div class="row">
     <div class="col-7 brewery-show">
-      <h2 class="text-center mb">What's on tap at <%= @brewery.name %></h2>
+      <h2 class="text-center mb-5">What's on tap at <%= @brewery.name %></h2>
       <% if @brewery.brands.empty? %>
         <p class="text-center"><%= @brewery.name  %> does not have any brands.</p>
         <% else @brewery.brands.each do |brand| %>
@@ -46,11 +46,11 @@
 <% if @current_user == @brewery %>
   <div class="row">
     <div class="col-12 text-center">
-      <a href="/brands/new" class="btn-sm mt mb">Register your brand</a>
+      <a href="/brands/new" class="btn-sm my-5">Register your brand</a>
     </div>
   </div>
 <% end  %>
 
-<div class="mt">
+<div class="mt-5">
   <a href="/breweries" class="link">Check All Breweries</a>
 </div>
