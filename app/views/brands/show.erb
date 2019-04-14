@@ -8,33 +8,35 @@
 </div>
 
 <div class="row">
-  <div class="col-12 text-center my-5">
+  <div class="col-12 text-center my-5 mx-auto">
     <% if @brand.brewery_id == @current_user.id %>
-      <a href="/brands/<%= @brand.id %>/edit" class="btn-sm">Edit</a>
-      <a href="/brands/new" class="btn-sm">Register a new brand</a>
+      <!-- form for delete action -->
+      <form action="/brands/<%= @brand.id %>" method="post">
 
-      <form action="/brands/<%= @brand.id %>" method="post" class="form-inline">
+        <a href="/brands/<%= @brand.id %>/edit" class="btn-sm btn-media-block">Edit</a>
+        <a href="/brands/new" class="btn-sm btn-media-block">Register a new brand</a>
+
         <input type="hidden" id="hidden" name="_method" value="delete">
-        <input type="submit" value="Delete" class="btn-sm">
+        <input type="submit" value="Delete" class="btn-sm btn-media-block">
       </form>
     <% end %>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 text-left">
+  <div class="col-12 small-center">
     <a href="/breweries/<%= @brand.brewery.id %>" class="link">More about this Brewery</a>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 text-left">
+  <div class="col-12 small-center">
     <a href="/brands" class="link">All brands</a>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-12 text-left">
+  <div class="col-12 small-center">
     <a href="/breweries" class="link">All breweries</a>
   </div>
 </div>

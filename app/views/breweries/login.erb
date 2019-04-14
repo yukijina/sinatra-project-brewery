@@ -2,32 +2,30 @@
   <p class="error-msg text-center"><%= flash[:notice] %></p>
 <% end %>
 <div class="row">
-  <div class="col-12 text-center my-3">
-    <h2>Log in</h2>
+  <div class="col-12 text-center my-3 pt-3">
+    <h3>Log in</h3>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12 text-center">
-    <form action="/login" method="post">
-      <div class="input-col">
-        <div class="input-col-title">
-          <label for="email">Email:</label>
-        </div>
-        <input type="email" name="email" required>
-      </div>
-
-      <div class="input-col">
-        <div class="input-col-title">
-          <label for="password">Password:</label>
-        </div>
-        <input type="password" name="password" required>
-      </div>
-
-      <input type="submit" value="Log In" class="btn-sm my-5">
-    </form>
+<form action="/login" method="post">
+  <div class="form-group row w-50 mx-auto">
+    <label for="email" class="col-md-3 col-form-label">Email:</label>
+    <div class="col-md-9">
+      <input class="form-control" type="email" name="email" required>
+    </div>
   </div>
-</div> <!-- the end of row  -->
+
+  <div class="form-group row w-50 mx-auto">
+    <label for="password" class="col-md-3 col-form-label">Password:</label>
+    <div class="col-md-9">
+      <input class="form-control" type="password" name="password" required>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <input type="submit" value="Log In" class="btn-sm my-5">
+  </div>
+</form>
 
 <div class="row">
   <div class="col-12 text-center">

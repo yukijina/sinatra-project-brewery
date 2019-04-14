@@ -3,20 +3,20 @@
     <div class="col-12">
       <%# Render from log in form %>
       <% if flash.has?(:notice) %>
-        <p class="success-msg"><%= flash[:notice] %></p>
+        <p class="success-msg small-center pt-5"><%= flash[:notice] %></p>
       <% end %>
     </div>
   </div>
   <!-- TITLE -->
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 small-center">
       <h1><%= @brewery.name %></h1>
     </div>
   </div>
 
   <!-- DESCRIPTION -->
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 small-center">
       <% if @current_user == @brewery %>
         <p>your member ID: <%= @brewery.id %></p>
         <p>your email: <%= @brewery.email %></p>
@@ -51,6 +51,6 @@
   </div>
 <% end  %>
 
-<div class="mt-5">
+<div class="mt-5 small-center">
   <a href="/breweries" class="link">Check All Breweries</a>
 </div>

@@ -11,13 +11,13 @@
     <p>Here is the list of all breweries in Brewery Club! Click the button to see more details.</p>
   </div>
 
-  <div class="row col-12">
+  <div class="row mb-5">
     <% @breweries.each.with_index(1) do |brewery, index| %>
-    <div class="col-4">
+    <div class="col-md-6 col-lg-4">
       <div class="col-12 brewery-card">
       <h4><%= index %>. <%= brewery.name %></h4>
       <p><%= brewery.city %></p>
-      <a href="/breweries/<%= brewery.id %>" class="btn-sm btn-text">More about <%= brewery.name %></a>
+      <a href="/breweries/<%= brewery.id %>" class="btn-sm btn-text">About <%= brewery.name %></a>
     </div>
     </div>
     <% end %>
