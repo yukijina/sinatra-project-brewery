@@ -1,41 +1,37 @@
 <% if flash.has?(:notice) %>
-  <p class="error-msg"><%= flash[:notice] %></p>
+  <p class="error-msg text-center"><%= flash[:notice] %></p>
 <% end %>
-<div class="content">
-  <div class="row">
-    <div class="col-12">
-      <h3>Log in</h3>
-    </div>
+<div class="row">
+  <div class="col-12 text-center my-3">
+    <h2>Log in</h2>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-12">
-      <form action="/login" method="post">
-        <div class="input-col">
-          <div class="input-col-title">
-            <label for="email">Email: </label>
-          </div>
-          <input type="email" name="email" required>
+<div class="row">
+  <div class="col-12 text-center">
+    <form action="/login" method="post">
+      <div class="input-col">
+        <div class="input-col-title">
+          <label for="email">Email:</label>
         </div>
+        <input type="email" name="email" required>
+      </div>
 
-        <div class="input-col">
-          <div class="input-col-title">
-          <label for="password">Password: </label>
-          </div>
-          <input type="password" name="password" required>
+      <div class="input-col">
+        <div class="input-col-title">
+          <label for="password">Password:</label>
         </div>
+        <input type="password" name="password" required>
+      </div>
 
-        <input type="submit" value="Log In" class="btn-sm">
+      <input type="submit" value="Log In" class="btn-sm my-5">
+    </form>
+  </div>
+</div> <!-- the end of row  -->
 
-      </form>
-    </div>
-  </div> <!-- the end of row  -->
-
-  <div class="row">
-    <div class="col-12">
-      <p class="mt">Need to sign up?</p>
-      <a href="/signup" class="btn-sm">Sign Up</a>
-    </div>
-  </div> <!-- the end of row  -->
-
-</div> <!-- the end of content -->
+<div class="row">
+  <div class="col-12 text-center">
+    <p class="my-3">Need to sign up?</p>
+    <a href="/signup" class="btn-sm mb-5">Sign Up</a>
+  </div>
+</div> <!-- the end of row  -->
