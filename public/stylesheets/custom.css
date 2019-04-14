@@ -6,7 +6,6 @@
 }
 
 html, body {
-  /* height: 100%; */
   width: 100%;
 }
 
@@ -78,12 +77,12 @@ h2,h3,h4 {
   background-color: #F0ECE3;
   color: #333;
   border: 1.5px solid rgb(208, 131, 28);
-  /* border: 1.5px solid #6C4241; */
   height: 180px;
   padding: 18px;
   margin-bottom: 8%;
 }
 
+/* BOTTUN */
 .btn {
   background-color: rgb(208, 131, 28);
   color: #fefefe;
@@ -148,7 +147,8 @@ a:visited {
   font-size: 1.1em;
 }
 
-a:hover {
+a:hover,
+a.link:hover {
   color: rgb(208, 131, 28);
 }
 
@@ -157,14 +157,11 @@ a.link:visited {
   text-decoration: underline;
 }
 
-a.link:hover {
-  color: rgb(208, 131, 28);
-}
-
 a.btn-sm {
   background-color: rgb(244, 173, 79);
 }
 
+/* INPUT */
 input {
   padding: 8px 5px;
   border: none;
@@ -193,15 +190,7 @@ form.form-inline {
   display: inline;
 }
 
-
-.mt {
-  margin-top: 5%;
-}
-
-.mb {
-  margin-bottom: 3%;
-}
-
+/* ERROR MESSAGE */
 .error-msg {
   color: rgb(242, 85, 27);
 }
@@ -209,25 +198,3 @@ form.form-inline {
 .success-msg {
   color: rgb(18, 139, 11);
 }
-
-/* Navigation Bar */
-/* nav {
-  text-align: center;
-}
-nav li {
-  color: #fefefe;
-  padding: 7px 25px;
-  display: inline-block;
-  border-radius: 50px;
-  border: 1.2px solid rgb(208, 131, 28);
-  margin-right: 0.5%;
-} */
-
-/* Brewery Show Page */
-/* ul.brands-wrapper {
-#  width: 30%;
-  margin: 0 auto;
-} */
-/* li.brands {
-  text-align: center;
-} */
