@@ -1,33 +1,32 @@
-<div class="row">
-  <div class="col-12">
-    <% if @no_matching_page %>
+<% if @no_matching_page %>
+  <div class="row">
+    <div class="col-12">
       <p class="error-msg"><%= @no_matching_page %><i class="fas fa-exclamation-circle"></i></p>
+    </div>
   </div>
-</div>
-
-<div class="row">
-  <div class="col-12 my-5">
-    <% else %>
+<% else %>
+  <div class="row">
+    <div class="col-12 my-5">
       <h1>ALL BRANDS</h1>
       <h2>Hey, <%= @current_user.name %>!</h2>
       <p>Here is the list of all brands of Brewery Club! Click the button to see more details.</p>
+    </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-12">
-    <h3><i class="fas fa-beer"></i> Style: </h3>
+  <div class="row">
+    <div class="col-12">
+      <h3><i class="fas fa-beer"></i> Style: </h3>
+    </div>
   </div>
-</div>
 
 <!-- ALE -->
-<div class="row">
-  <div class="col-12 mt-4">
-    <h4>[ ALE ]</h4>
+  <div class="row">
+    <div class="col-12 mt-4">
+      <h4>[ ALE ]</h4>
+    </div>
   </div>
-</div>
 
-<div class="row">
+  <div class="row">
   <% @ale.each do |brand| %>
     <div class="col-md-6 col-lg-4">
       <div class="col-12 brand-card">
