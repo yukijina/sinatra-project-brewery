@@ -117,3 +117,7 @@
 - brands/new
 - brands/show  (individual brand info + delete form)
 - brands/edit
+
+
+git ignore file and seed file
+gemfile.lock
