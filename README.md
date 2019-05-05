@@ -23,6 +23,7 @@ Once that is complete, you should only need to run `shotgun` in the application 
 
 Everything should be set up.
 
+Or to view the website, please visit https://sinatra-project-brewery.herokuapp.com/
 
 ## Contributing
 
